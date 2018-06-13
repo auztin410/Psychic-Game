@@ -32,10 +32,9 @@
 
             var wins = document.getElementById("wins");
             var losses = document.getElementById("losses");
+            var previousGuesses = document.getElementById("previousGuesses")
             
-            
-            var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
+           
             var guessesSoFar = [];
 
             if (userGuess == computerGuess) {
@@ -53,7 +52,7 @@
             else if (userGuess !== computerGuess) {
                 guesses.textContent = --guessesCount;
                 previousGuesses.textContent = event.key++;
-                guessesSoFar[guessesSoFar.length]=userGuess;
+                previousGuesses[previousGuesses.length]=userGuess;
              }
             
 
