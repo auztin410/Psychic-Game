@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic Game</title>
+    <link rel="stylesheet" href="reset.css">
+</head>
+
+<body>
+
+    <script>
+
+        var winsCount = 0;
+        var lossesCount = 0;
+        var guessesCount = 8;
+
+        // var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        var computerChoices = ["a"]
+
+
+
+        document.onkeyup = function (event) {
+
+            var userGuess = event.key;
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+            myGuess.textContent = event.key;
+            computers.textContent = computerGuess;
+
+            var wins = document.getElementById("wins");
+            var losses = document.getElementById("losses");
+            
+            
+            var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+            var guessesSoFar = [];
+
+            if (userGuess == computerGuess) {
+                wins.textContent = ++winsCount;
+                alert("You Win!")
+            }
+
+            else if (guessesCount == 1) {
+                losses.textContent = ++lossesCount;
+                guesses.textContent = guessesCount += 7;
+                alert("You Lose!")
+
+            }
+
+            else if (userGuess !== computerGuess) {
+                guesses.textContent = --guessesCount;
+                previousGuesses.textContent = event.key++;
+                guessesSoFar[guessesSoFar.length]=userGuess;
+             }
+            
+
+
+
+        }
+    </script>
+    <h1>Psychic Game</h1>
+    <br>
+    <p>Guess what letter I am thinking of</p>
+    <p>Your guess:
+        <span id="myGuess"></span>
+    </p>
+    <p>Computer's guess:
+        <span id=computers></span>
+    </p>
+    <p>Previous guesses:
+        <span id="previousGuesses"></span>
+    </p>
+    <p>Guesses left:
+        <span id="guesses">8</span>
+    </p>
+    <br>
+    <p>Wins:
+        <span id="wins">0</span>
+    </p>
+    <p>Losses:
+        <span id="losses">0</span>
+    </p>
+
+</body>
+
+</html>
