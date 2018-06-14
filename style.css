@@ -1,0 +1,13 @@
+h1 {
+    font-family:'Krona One', sans-serif;
+    font-size: 40px;
+    border-bottom: 10px;
+    border-color: black;
+    border-style: dashed;
+    padding-bottom: 10px;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}

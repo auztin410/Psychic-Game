@@ -6,61 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Psychic Game</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet">
+    <script src="logic.js"></script>
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    
+
 </head>
 
 <body>
 
-    <script>
-
-        var winsCount = 0;
-        var lossesCount = 0;
-        var guessesCount = 8;
-
-        // var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-        var computerChoices = ["a"]
-
-
-
-        document.onkeyup = function (event) {
-
-            var userGuess = event.key;
-            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-            myGuess.textContent = event.key;
-            computers.textContent = computerGuess;
-
-            var wins = document.getElementById("wins");
-            var losses = document.getElementById("losses");
-            var previousGuesses = document.getElementById("previousGuesses")
-            
-           
-            var guessesSoFar = [];
-
-            if (userGuess == computerGuess) {
-                wins.textContent = ++winsCount;
-                alert("You Win!")
-            }
-
-            else if (guessesCount == 1) {
-                losses.textContent = ++lossesCount;
-                guesses.textContent = guessesCount += 7;
-                alert("You Lose!")
-
-            }
-
-            else if (userGuess !== computerGuess) {
-                guesses.textContent = --guessesCount;
-                previousGuesses.textContent = event.key++;
-                previousGuesses[previousGuesses.length]=userGuess;
-             }
-            
-
-
-
-        }
-    </script>
+    
     <h1>Psychic Game</h1>
+    <br>
+    <img src="psychic.jpg" alt="psychic" height="300" width="400">
     <br>
     <p>Guess what letter I am thinking of</p>
     <p>Your guess:
